@@ -114,16 +114,14 @@ progress {
   margin: 0;
   display: block;
   position: absolute;
+  z-index: 3;
   top: 70px;
   width: 100%;
   left: 0;
   height: 5px;
+  transition: all 0.5s;
     -webkit-appearance: none !important;
    appearance: none !important;
-}
-
-.uploading progress {
-  opacity: 1;
 }
 
 progress::-webkit-progress-bar {

@@ -22,14 +22,12 @@ $().ready(function () {
         //$('#upload-form').reset();
         document.getElementById('upload-form').reset();
         // show new results
-        document.body.classList.remove('uploading');
         toastr.success('Upload completed!');
         if (window.hasOwnProperty('loadSubmission')) {
           loadSubmission(currentUserId);
         }
       },
       error: function () {
-        document.body.classList.remove('uploading');
         toastr.error('Upload error:', e);
       },
       // Form data
@@ -47,7 +45,10 @@ $().ready(function () {
       $('progress').attr({value: e.loaded, max: e.total});
     }
     if (e.loaded == e.total) {
-      setTimeout(function(){ $('progress').attr({value: 0}); }, 1000);
+      setTimeout(function(){ 
+        $('progress').attr({value: 0}); 
+        document.body.classList.remove('uploading');
+      }, 1000);
     }
   }
 
@@ -75,7 +76,6 @@ $().ready(function () {
         success: function () {
           document.getElementById('submission-text').innerHTML = "";
           // show new results
-          document.body.classList.remove('uploading');
           toastr.success('Text upload completed!');
           // reload submissions if function exists
           if (window.hasOwnProperty('loadSubmission')) {
@@ -83,7 +83,6 @@ $().ready(function () {
           }
         },
         error: function () {
-          document.body.classList.remove('uploading');
           toastr.error('Upload error:', e);
         },
         // Form data
@@ -116,7 +115,6 @@ $().ready(function () {
         success: function () {
           document.getElementById('comment-text').innerHTML = "";
           // show new results
-          document.body.classList.remove('uploading');
           toastr.success('Comment posted!');
           // reload submissions if function exists
           if (window.hasOwnProperty('loadSubmission')) {
@@ -124,7 +122,6 @@ $().ready(function () {
           }
         },
         error: function () {
-          document.body.classList.remove('uploading');
           toastr.error('Upload error:', e);
         },
         // Form data

@@ -2,7 +2,7 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
 
 body {
-  background-color: rgb(240, 240, 240);
+  background-color: #dbdbdb; /*#45CC85;*/
   font-family: 'Open Sans', Helvetica, sans-serif;
   margin: 0;
 }
@@ -45,8 +45,8 @@ body {
 }
 
 body > header {
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  background-color: white; /* #23364B; */
+  /*box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);*/
+  background-color: #303435; /* #23364B; */
   color: #333;
   position: fixed;
   top: 0;
@@ -64,76 +64,97 @@ body > header {
 
 #text-upload-wrapper,
 #file-upload-wrapper {
-  background-color: lightgreen;
-  display: inline-block;
-  position: relative;
-  border-radius: 5em;
-  overflow: hidden;
-  margin: 3em 0.5em;
-  height: 5em;
-  width: 5em;
+  float: right;
+  height: 70px;
+  width: 70px;
+  cursor: pointer;
+  color: #FFF;
 }
 
 #text-upload-wrapper:active,
-#file-upload-wrapper:active {
-  background-color: darkgreen;
+#file-upload-wrapper:active,
+#text-upload-wrapper:hover,
+#file-upload-wrapper:hover{
+  color: #0DFF89;
 }
 
 #text-upload-wrapper:active span,
 #file-upload-wrapper:active span,
 #text-upload-wrapper:active i,
 #file-upload-wrapper:active i {
-  color: lightgreen;
 }
 
 #text-upload-wrapper i,
 #file-upload-wrapper i {
-  font-size: 2.5em;
-  color: darkgreen;
-  margin: 0.3em;
+  font-size: 30px;
+  margin-top: 18px;
 }
 
 #text-upload-wrapper span,
 #file-upload-wrapper span {
-  position: absolute;
+  width: 70px;
+  height: 70px;
   text-align: center;
-  color: darkgreen;
-  bottom: 0.5em;
-  width: 100%;
-  left: 0;
 }
 
 #file-upload {
-  position: absolute;
   font-size: 20px;
   cursor: pointer;
-  height: 100%;
-  width: 100%;
+  height: 70px;
+  width: 70px;
   opacity: 0;
   padding: 0;
   margin: 0;
-  right: 0;
+  right: 5%;
   top: 0;
+  position: absolute;
 }
 
 progress {
-  margin: 1em auto;
-  display: none;
-  width: 10em;
+  margin: 0;
+  display: block;
+  position: absolute;
+  top: 70px;
+  width: 100%;
+  left: 0;
+  height: 5px;
+    -webkit-appearance: none !important;
+   appearance: none !important;
 }
 
 .uploading progress {
-  display: block;
+  opacity: 1;
+}
+
+progress::-webkit-progress-bar {
+  background-color: transparent;
+}
+
+progress::-webkit-progress-value {
+  background-color: #0DFF89;
+}
+
+.uploading progress::-webkit-progress-value {
+  transition: all 0.9s ease;
 }
 
 h1 {
   font-size: 1.5em;
+  color: #45CC85;
+  font-weight: bold !important;
   margin: 0;
 }
 
 h2 {
+  font-size: 1.2em;
+  margin: 0;
+  color: #45CC85;
+}
+
+h3 {
   font-size: 1em;
   margin: 0;
+  color: #45CC85;
 }
 
 #student-filter-button {
@@ -144,8 +165,8 @@ h2 {
 }
 
 #student-filter-button i {
-  padding-top: 15px;
-  font-size: 40px;
+  padding-top: 18px;
+  font-size: 30px;
 }
 
 #student-filter-title {
@@ -158,7 +179,7 @@ h2 {
 }
 
 .menu-icon {
-  color: #333;
+  color: #FFF;
 }
 
 .menu-icon:hover, .menu-icon.active {
@@ -186,7 +207,7 @@ h2 {
   height: 50px;
   position: fixed;
   z-index: 2;
-  background-color: #333;
+  background-color: #3D4143;
   top: 20px;
   transition: all 0.4s ease-in-out;
 }
@@ -210,15 +231,17 @@ article {
   transition: all 0.2s ease-in-out;
   background-color: white;
   margin-bottom: 2rem;
+  padding: 10px;
   position: relative;
-  overflow: hidden;
   width: 100%;
+  -webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.3);
+  -moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.3);
+  box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.3);
 }
 
 article.comment {
   box-sizing: border-box;
   border-radius: 1em;
-  padding: 0 2rem;
 }
 
 article.comment .commentauthor {
@@ -230,17 +253,12 @@ article.comment .commentauthor {
   color: #333;
 }
 
-article.textpost {
-  box-sizing: border-box;
-  padding: 0 2rem;
-}
-
 article.textpost div {
   margin: 20px 0;
 }
 
 article.file {
-  padding: 1em 0 1.5em;
+  padding: 1em 10px 1.5em;
   text-align: center;
 }
 
@@ -257,17 +275,17 @@ figure img {
 }
 
 h4 {
-  margin: 0 0 0.5em;
-  font-size: 1.5em;
+  margin: 2em 0;
+  font-size: 2em;
   width: 100%;
-  color: #666;
+  color: #373B49;
 }
 
 .container {
   flex-direction: column;
   align-items: center;
-  max-width: 90%;
-  margin: 0 auto;
+  max-width: 900px;
+  margin: 100px auto 0;
   display: flex;
 }
 
@@ -281,64 +299,6 @@ h4 {
 .author,
 .avatar {
   display: none;
-}
-
-@media (max-width: 640px) {
-  body {
-    background: white;
-  }
-  
-  body > header {
-    height: 50px;
-  }
-  
-  .dummy-logo {
-    height: 30px;
-    background-size: auto 30px;
-  }
-  
-  .dummy-logo svg {
-    width: 30px;
-    height: 30px;
-  }
-  
-  .dummy-logo:hover {
-    background-size: auto 30px;
-  }
-  
-  #student-filter-button {
-    width: 50px;
-    height: 50px;
-  }
-
-  #student-filter-button i {
-    padding-top: 15px;
-    font-size: 20px;
-  }
-  
-  #student-filter-title {
-    font-size: 15px;
-    margin: 17.5px 0 17.5px 5%;
-  }
-  
-  .menu-snackbar {
-    top: 0;
-  }
-  
-  .menu-snackbar.open {
-    top: 50px;
-  }
-
-  h4 {
-    text-align: center;
-    border-bottom: none;
-    font-size: 1.25rem;
-  }
-
-  article {
-    box-shadow: none;
-    margin: 0;
-  }
 }
 
 .blog-image {
@@ -359,15 +319,24 @@ h4 {
   transition: opacity 0.2s;
   pointer-events: none;
   position: absolute;
-  text-align: right;
-  background: black;
-  color: #ddd;
+  text-align: left;
+  color: #fff;
   opacity: 0;
-  right: 0;
+  top: 0px;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 1;
+  right: -110px;
+  width: 100px;
+}
+
+.row > img {
+  object-fit: cover;
+  max-height: 500px;
 }
 
 .row:hover > header {
-  opacity: 0.8;
+  opacity: 1;
 }
 
 .row-author {
@@ -434,4 +403,94 @@ h4 {
 #comment-upload-form .trumbowyg-box textarea,
 #comment-upload-form .trumbowyg-box #comment-text {
   min-height: 100px;
+}
+
+
+@media (max-width: 1110px) {
+  .row > header {
+    transition: opacity 0.2s;
+    pointer-events: none;
+    position: absolute;
+    text-align: center;
+    color: #fff;
+    opacity: 1;
+    top: -25px;
+    left: calc(50% - 50px);
+  }
+}
+
+@media (max-width: 1000px) {
+  
+  body > header {
+    height: 50px;
+  }
+  
+  .dummy-logo {
+    height: 30px;
+    background-size: auto 30px;
+  }
+  
+  .dummy-logo svg {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .dummy-logo:hover {
+    background-size: auto 30px;
+  }
+  
+  #student-filter-button {
+    width: 50px;
+    height: 50px;
+  }
+
+  #student-filter-button i {
+    padding-top: 15px;
+    font-size: 20px;
+  }
+  
+  #text-upload-wrapper i,
+  #file-upload-wrapper i {
+    font-size: 20px;
+    margin-top: 15px;
+  }
+  
+  #text-upload-wrapper,
+  #file-upload-wrapper {
+    width: 50px;
+    height: 50px;
+  }
+  
+  #upload-form {
+    width: 100px;
+    height: 50px;
+    float: right;
+  }
+  
+  #student-filter-title {
+    font-size: 15px;
+    margin: 17.5px 0 17.5px 5%;
+  }
+  
+  .menu-snackbar {
+    top: 0;
+  }
+  
+  .menu-snackbar.open {
+    top: 50px;
+  }
+
+  h4 {
+    text-align: center;
+    border-bottom: none;
+    font-size: 1.25rem;
+  }
+
+  article {
+    margin: 10px 0 35px;
+  }
+  
+  .container {
+    max-width: 90%;
+  }
 }

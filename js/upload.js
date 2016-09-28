@@ -42,8 +42,12 @@ $().ready(function () {
   });
 
   function progressHandlingFunction(e) {
+    document.body.classList.add('uploading');
     if (e.lengthComputable) {
       $('progress').attr({value: e.loaded, max: e.total});
+    }
+    if (e.loaded == e.total) {
+      setTimeout(function(){ $('progress').attr({value: 0}); }, 1000);
     }
   }
 

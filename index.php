@@ -43,7 +43,7 @@ if (!State::refreshToken()) {
   <meta name="apple-mobile-web-app-capable" content="yes">
 
   <link rel="apple-touch-icon" sizes="144x144" href="img/apple-icon-144x144.png">
-  <link rel="icon" type="image/png" href="img/digitaldummy.png">
+  <link rel="icon" type="image/png" href="img/D2_Icon-01.png">
   <link rel="stylesheet" href="bower_components/normalize-css/normalize.css">
   <link rel="stylesheet" href="bower_components/css-modal/build/modal.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -105,15 +105,15 @@ if (!State::refreshToken()) {
     <div class="menu-wrapper">
 			<form enctype="multipart/form-data" id="upload-form">
 				<div id="file-upload-wrapper">
-					<i class="fa fa-upload"></i>
 					<input name="file" type="file" id="file-upload"/>
+					<i class="fa fa-upload"></i>
 				</div>
 				<a id="text-upload-wrapper" href="#modal-text">
-					<i class="fa fa-plus-square"></i>
+					<i class="fa fa-plus"></i>
 				</a>
 				<progress></progress>
 			</form>
-    	<a id="student-filter-button" class="menu-icon" href="#"><i class="fa fa-filter"></i></a>
+    	<a id="student-filter-button" class="menu-icon" href="#"><i class="fa fa-sliders"></i></a>
     </div>
   </header>
   <div class="menu-snackbar">

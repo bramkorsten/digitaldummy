@@ -58,6 +58,7 @@ if (!State::refreshToken()) {
   <script src='bower_components/fastclick/lib/fastclick.js'></script>
   <script src="js/anchorme.js"></script>
   <script src="js/moment.min.js"></script>
+	<script src="js/snackbar.js"></script>
   <script src="js/upload.js?v1.1"></script>
 </head>
 <body>

@@ -22,13 +22,13 @@ $().ready(function () {
         //$('#upload-form').reset();
         document.getElementById('upload-form').reset();
         // show new results
-        toastr.success('Upload completed!');
+        snackbar.success('Upload completed!');
         if (window.hasOwnProperty('loadSubmission')) {
           loadSubmission(currentUserId);
         }
       },
       error: function () {
-        toastr.error('Upload error:', e);
+        snackbar.error('Upload error:', e);
       },
       // Form data
       data: formData,
@@ -76,14 +76,14 @@ $().ready(function () {
         success: function () {
           document.getElementById('submission-text').innerHTML = "";
           // show new results
-          toastr.success('Text upload completed!');
+          snackbar.success('Text upload completed!');
           // reload submissions if function exists
           if (window.hasOwnProperty('loadSubmission')) {
             loadSubmission(currentUserId);
           }
         },
         error: function () {
-          toastr.error('Upload error:', e);
+          snackbar.error('Upload error:', e);
         },
         // Form data
         data: formData,
@@ -115,14 +115,14 @@ $().ready(function () {
         success: function () {
           document.getElementById('comment-text').innerHTML = "";
           // show new results
-          toastr.success('Comment posted!');
+          snackbar.success('Comment posted!');
           // reload submissions if function exists
           if (window.hasOwnProperty('loadSubmission')) {
             loadSubmission(currentUserId);
           }
         },
         error: function () {
-          toastr.error('Upload error:', e);
+          snackbar.error('Upload error:', e);
         },
         // Form data
         data: formData,
